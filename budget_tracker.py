@@ -25,6 +25,14 @@ while True:
     print(f"   🟡 Debt Repayment (20%)    ${debt_repayment:.2f}")
     print(f"   🔵 Living Expenses (60%):  ${living_expenses:.2f}")
 
+    with open("budget_report.txt", "a") as file:
+        file.write(f"Income: ${income:.2f}\n")
+        file.write(f"Tithe (10%): ${Tithe:.2f}\n")
+        file.write(f"Savings (10%): ${Savings:.2f}\n")
+        file.write(f"Debt Repayment (20%): ${debt_repayment:.2f}\n")
+        file.write(f"Living Expenses (60%): ${living_expenses:.2f}\n")
+        file.write("-" * 40 + "\n")
+
     repeat = input("\nWould you like to enter another income? (Y/N): ").strip().lower()
     if repeat != 'y':
         print("Goodbye. Stay on mission. 💼")
