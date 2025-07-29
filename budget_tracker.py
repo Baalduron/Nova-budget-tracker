@@ -1,5 +1,16 @@
 print("Welcome to the Nova Budget Tracker!")
 
+from datetime import datetime
+
+def calculate_budget(income):
+    """Returns a dictionary with the 10/10/20/60 budget breakdown."""
+    return {
+        "Tithe": income * 0.10,
+        "Savings": income * 0.10,
+        "Debt Repayment": income * 0.20,
+        "Living Expenses": income * 0.60
+    }
+
 while True:
     while True:
         try:
@@ -12,26 +23,23 @@ while True:
             print("⚠ That's not a valid number. Please try again.")
             continue
 
-    print("You Entered: $", income)
-
-    Tithe = income * 0.10
-    Savings = income * 0.10
-    debt_repayment = income * 0.20
-    living_expenses = income * 0.60
+    budget = calculate_budget(income)
 
     print("\nHere is your 10/10/20/60 Budget Breakdown:")
-    print(f"   🟢 Tithe (10%):            ${Tithe:.2f}")
-    print(f"   🟢 Savings (10%):          ${Savings:.2f}")
-    print(f"   🟡 Debt Repayment (20%)    ${debt_repayment:.2f}")
-    print(f"   🔵 Living Expenses (60%):  ${living_expenses:.2f}")
+    print(f"   🟢 Tithe (10%):            ${budget['Tithe']:.2f}")
+    print(f"   🟢 Savings (10%):          ${budget['Savings']:.2f}")
+    print(f"   🟡 Debt Repayment (20%)    ${budget['Debt Repayment']:.2f}")
+    print(f"   🔵 Living Expenses (60%):  ${budget['Living Expenses']:.2f}")
 
-    with open("budget_report.txt", "a") as file:
+    with open("budget_report.txt", "a", encoding="utf-8") as file:
+        file.write(f"\n📅 Entry Date: {datetime.now().strftime('%Y-%m-%d %H:%M:%S')}\n")
         file.write(f"Income: ${income:.2f}\n")
-        file.write(f"Tithe (10%): ${Tithe:.2f}\n")
-        file.write(f"Savings (10%): ${Savings:.2f}\n")
-        file.write(f"Debt Repayment (20%): ${debt_repayment:.2f}\n")
-        file.write(f"Living Expenses (60%): ${living_expenses:.2f}\n")
+        file.write(f"Tithe (10%): ${budget['Tithe']:.2f}\n")
+        file.write(f"Savings (10%): ${budget['Savings']:.2f}\n")
+        file.write(f"Debt Repayment (20%): ${budget['Debt Repayment']:.2f}\n")
+        file.write(f"Living Expenses (60%): ${budget['Living Expenses']:.2f}\n")
         file.write("-" * 40 + "\n")
+    
 
     repeat = input("\nWould you like to enter another income? (Y/N): ").strip().lower()
     if repeat != 'y':
