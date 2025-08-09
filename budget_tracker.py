@@ -1,3 +1,18 @@
+def get_valid_income() -> float:
+    while True:
+        try:
+            income = float(input("enter your weekly income: $"))
+            if income <= 0:
+                print("⚠ Please enter a positive number.")
+                with open("budget_report.txt", "a") as r:
+                    r.write("[ERROR] Invalid input: No positive number entered. \n")
+                continue
+            return income
+        except ValueError:
+            print("⚠ That is  not a valid number. Please try again.")
+            with open("budget_report.txt", "a") as r:
+                r.write("[ERROR] Invalid input: Non-numeric characters entered. \n")
+
 print("Welcome to the Nova Budget Tracker!")
 
 from datetime import datetime
@@ -12,16 +27,7 @@ def calculate_budget(income):
     }
 
 while True:
-    while True:
-        try:
-            income = float(input("Enter Your Weekly Income: $"))
-            if income <= 0:
-                print ("⚠ Please enter a positive number.")
-                continue
-            break
-        except ValueError:
-            print("⚠ That's not a valid number. Please try again.")
-            continue
+    income = get_valid_income()
 
     budget = calculate_budget(income)
 
