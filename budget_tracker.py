@@ -17,13 +17,20 @@ print("Welcome to the Nova Budget Tracker!")
 
 from datetime import datetime
 
+BUDGET_RULES = {
+    "Tithe": 0.10,
+    "Savings": 0.10,
+    "Debt Repayment": 0.20,
+    "Living Expenses": 0.60
+}
+
 def calculate_budget(income):
     """Returns a dictionary with the 10/10/20/60 budget breakdown."""
     return {
-        "Tithe": income * 0.10,
-        "Savings": income * 0.10,
-        "Debt Repayment": income * 0.20,
-        "Living Expenses": income * 0.60
+        "Tithe": income * BUDGET_RULES["Tithe"],
+        "Savings": income * BUDGET_RULES["Savings"],
+        "Debt Repayment": income * BUDGET_RULES["Debt Repayment"],
+        "Living Expenses": income * BUDGET_RULES["Living Expenses"]
     }
 
 while True:
