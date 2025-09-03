@@ -1,5 +1,19 @@
 def get_valid_income() -> float:
+    while True:
+        try:
+            income = float(input("enter your weekly income: $"))
+            if income <= 0:
+                print("⚠ Please enter a positive number.")
+                with REPORT_PATH.open("a", encoding="utf-8") as f:
+                    f.write("[ERROR] Invalid input: No positve number entered.\n")
+                continue
+            return income
+        except ValueError:
+            print("⚠ That is not a valid number. Please try again.")
+            with REPORT_PATH.open("a", encoding="utf-8") as f:
+                f.write("[ERROR] Invalid input: Non-numeric characters entered.\n")
 
+def main_menu():
     while True:
         print("\n--- Nova Budget Tracker ---")
         print("1. Enter New Income")
@@ -9,31 +23,19 @@ def get_valid_income() -> float:
         choice = input("Select an Option (1-3): ")
 
         if choice == "1":
-            while True:
-                try:
-                    income = float(input("enter your weekly income: $"))
-                    if income <= 0:
-                        print("⚠ Please enter a positive number.")
-                        with open("budget_report.txt", "a") as r:
-                            r.write("[ERROR] Invalid input: No positive number entered. \n")
-                        continue
-                    return income
-                except ValueError:
-                    print("⚠ That is  not a valid number. Please try again.")
-                    with open("budget_report.txt", "a") as r:
-                        r.write("[ERROR] Invalid input: Non-numeric characters entered. \n")
-            break  # placeholder for now
+            run_budget_session()
         elif choice == "2":
             review_reports()
         elif choice == "3":
             print("Goodbye. Stay on Mission. 💼")
             exit()
         else:
-            print("⚠ Invalid Choice. Please Enter 1, 2, or 3.")
-
+            print("⚠ Invalid Choice. Please enter 1, 2, or 3.")
+           
 def review_reports():
-    """Print the last 20 lines of budget_report.txt, if present."""
-    path = "budget_report.txt"
+    """Print the last 20 lines of budget report file, if present."""
+    path = REPORT_PATH
+
     try:
         with open(path, "r", encoding="utf-8") as f:
             lines = f.readlines()
@@ -41,15 +43,21 @@ def review_reports():
             print("\n(No Past Reports Found.)")
             return
         print("\n--- Recent Report Excerpts (last 20 lines) ---")
-        for line in lines [-20:]:
+        for line in lines[-20:]:
             print(line.rstrip("\n"))
         print("--- end ---")
     except FileNotFoundError:
         print("\n(No Past Reports Found - file does not exist yet.)")
 
-print("Welcome to the Nova Budget Tracker!")
-
 from datetime import datetime
+from pathlib import Path
+
+REPORT_PATH = Path(__file__).with_name("budget_report.txt")
+print(f"[log file] {REPORT_PATH.resolve()}")
+with REPORT_PATH.open("a", encoding="utf-8") as f:
+    f.write("[BOOT] App started OK\n")
+
+print("Welcome to the Nova Budget Tracker!")
 
 BUDGET_RULES = {
     "Tithe": 0.10,
@@ -62,14 +70,14 @@ def validate_rules(rules: dict[str, float]) -> None:
     if not rules:
         raise ValueError("No budget rules defined.")
     if any(p < 0 for p in rules.values()):
-        raise ValueError("Percentages nust be non-negative.")
+        raise ValueError("Percentages must be non-negative.")
     total = round(sum(rules.values()), 6)
     if total != 1.0:
         raise ValueError(f"Percentages must sum to 1.0; got {total}.")
 
 def calculate_budget(income: float, rules: dict[str, float] = BUDGET_RULES) -> dict[str, float]:
     validate_rules(rules)
-    return {name: round(income * pct, 2) for name, pct in rules.items()}
+    return {catagory: round(income * pct, 2) for catagory, pct in rules.items()}
 
 def _self_test():
     # Happy path
@@ -93,28 +101,25 @@ def _self_test():
 
     print("✅ _self_test passed")
 
-while True:
+def run_budget_session():
+    """Handle one budget entry: validation, input, calculation, print, log."""
     validate_rules(BUDGET_RULES)
     income = get_valid_income()
-
     budget = calculate_budget(income, BUDGET_RULES)
 
     print("\nHere is your 10/10/20/60 Budget Breakdown:")
-    for name, amount in budget.items():
-        print (f"• {name:16} ${amount:>8.2f}")
+    for category, amount in budget.items():
+            print(f"• {category:16} ${amount:8.2f}")
 
-    with open("budget_report.txt", "a", encoding="utf-8") as file:
-        file.write(f"\n📅 Entry Date: {datetime.now().strftime('%Y-%m-%d %H:%M:%S')}\n")
-        file.write(f"Income: ${income:.2f}\n")        
-        for name, amount in budget.items():
-            file.write(f"• {name:16} ${amount:>8.2f}\n")
-        file.write("-" * 40 + "\n")
+    with open(REPORT_PATH, "a", encoding="utf-8") as file:
+        file.write(f"\n📅 Entry Date: {datetime.now() .strftime('%Y-%m-%d %H:%M:%S')}\n")
+        file.write(f"Income: ${income:.2f}\n")
+        for category, amount in budget.items():
+            file.write(f"• {category:16} ${amount:8.2f}\n")
+        file.write("_" * 40+ "\n")
 
-    repeat = input("\nWould you like to enter another income? (Y/N): ").strip().lower()
-    if repeat != 'y':
-        print("Goodbye. Stay on mission. 💼")
-        break
-_self_test()
+if __name__ == "__main__":
+    _self_test()
+    main_menu()
 
-with open("budget_report.txt", "a", encoding="utf-8") as file:
-    file.write("✔ week 3 complete: validation + data-driven output.\n")
+f.write("✅ Session 4 Complete: Menu, M odular Functions, REPORT_PATH.\N")
