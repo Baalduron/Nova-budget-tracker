@@ -55,9 +55,8 @@ from pathlib import Path
 REPORT_PATH = Path(__file__).with_name("budget_report.txt")
 print(f"[log file] {REPORT_PATH.resolve()}")
 with REPORT_PATH.open("a", encoding="utf-8") as f:
-    f.write("[BOOT] App started OK\n")
 
-print("Welcome to the Nova Budget Tracker!")
+    print("Welcome to the Nova Budget Tracker!")
 
 BUDGET_RULES = {
     "Tithe": 0.10,
@@ -119,7 +118,8 @@ def run_budget_session():
         file.write("_" * 40+ "\n")
 
 if __name__ == "__main__":
+    print("[BOOT] App started OK\n") # console only
     _self_test()
     main_menu()
 
-f.write("✅ Session 4 Complete: Menu, M odular Functions, REPORT_PATH.\N")
+f.write("✅ Session 4 Complete: Menu, Modular Functions, REPORT_PATH.\n")

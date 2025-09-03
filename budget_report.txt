@@ -12,3 +12,193 @@ Savings (10%): $122.93
 Debt Repayment (20%): $245.85
 Living Expenses (60%): $737.56
 ----------------------------------------
+
+📅 Entry Date: 2025-08-09 09:50:36
+Income: $599.89
+Tithe (10%): $59.99
+Savings (10%): $59.99
+Debt Repayment (20%): $119.98
+Living Expenses (60%): $359.93
+----------------------------------------
+[ERROR] Invalid input: Non-numeric characters entered. 
+[ERROR] Invalid input: No positive number entered. 
+[ERROR] Invalid input: No positive number entered. 
+
+📅 Entry Date: 2025-08-09 09:56:41
+Income: $599.89
+Tithe (10%): $59.99
+Savings (10%): $59.99
+Debt Repayment (20%): $119.98
+Living Expenses (60%): $359.93
+----------------------------------------
+
+📅 Entry Date: 2025-08-09 11:07:14
+Income: $599.89
+Tithe (10%): $59.99
+Savings (10%): $59.99
+Debt Repayment (20%): $119.98
+Living Expenses (60%): $359.93
+----------------------------------------
+[ERROR] Invalid input: Non-numeric characters entered. 
+[ERROR] Invalid input: No positive number entered. 
+[ERROR] Invalid input: No positive number entered. 
+
+📅 Entry Date: 2025-08-09 11:07:37
+Income: $599.89
+Tithe (10%): $59.99
+Savings (10%): $59.99
+Debt Repayment (20%): $119.98
+Living Expenses (60%): $359.93
+----------------------------------------
+
+📅 Entry Date: 2025-08-11 19:29:22
+Income: $599.89
+Tithe (10%): $59.99
+Savings (10%): $59.99
+Debt Repayment (20%): $119.98
+Living Expenses (60%): $359.93
+----------------------------------------
+
+📅 Entry Date: 2025-08-11 19:41:00
+Income: $599.89
+Tithe (10%): $59.99
+Savings (10%): $59.99
+Debt Repayment (20%): $119.98
+Living Expenses (60%): $359.93
+----------------------------------------
+[ERROR] Invalid input: Non-numeric characters entered. 
+[ERROR] Invalid input: No positive number entered. 
+
+📅 Entry Date: 2025-08-11 19:41:31
+Income: $599.89
+Tithe (10%): $59.99
+Savings (10%): $59.99
+Debt Repayment (20%): $119.98
+Living Expenses (60%): $359.93
+----------------------------------------
+
+📅 Entry Date: 2025-08-11 19:55:53
+Income: $599.00
+Tithe (10%): $59.90
+Savings (10%): $59.90
+Debt Repayment (20%): $119.80
+Living Expenses (60%): $359.40
+----------------------------------------
+
+📅 Entry Date: 2025-08-11 20:12:06
+Income: $599.89
+Tithe (10%): $59.99
+Savings (10%): $59.99
+Debt Repayment (20%): $119.98
+Living Expenses (60%): $359.93
+----------------------------------------
+
+📅 Entry Date: 2025-08-11 20:18:23
+Income: $599.89
+Tithe (10%): $59.99
+Savings (10%): $59.99
+Debt Repayment (20%): $119.98
+Living Expenses (60%): $359.93
+----------------------------------------
+
+📅 Entry Date: 2025-08-11 20:19:33
+Income: $599.89
+
+📅 Entry Date: 2025-08-11 20:22:55
+Income: $599.89
+• Tithe            $   59.99
+• Savings          $   59.99
+• Debt Repayment   $  119.98
+• Living Expenses  $  359.93
+----------------------------------------
+
+📅 Entry Date: 2025-08-11 20:27:48
+Income: $599.89
+• Tithe            $   59.99
+• Savings          $   59.99
+• Debt Repayment   $  119.98
+• Living Expenses  $  359.93
+----------------------------------------
+
+📅 Entry Date: 2025-08-11 20:38:36
+Income: $599.89
+• Tithe            $   59.99
+• Savings          $   59.99
+• Debt Repayment   $  119.98
+• Living Expenses  $  359.93
+----------------------------------------
+
+📅 Entry Date: 2025-08-21 11:03:55
+Income: $664.63
+• Tithe            $   66.46
+• Savings          $   66.46
+• Debt Repayment   $  132.93
+• Living Expenses  $  398.78
+----------------------------------------
+[ERROR] Invalid input: No positive number entered. 
+[ERROR] Invalid input: Non-numeric characters entered. 
+
+📅 Entry Date: 2025-08-21 11:04:18
+Income: $664.63
+• Tithe            $   66.46
+• Savings          $   66.46
+• Debt Repayment   $  132.93
+• Living Expenses  $  398.78
+----------------------------------------
+
+📅 Entry Date: 2025-08-21 11:25:41
+Income: $664.63
+• Tithe            $   66.46
+• Savings          $   66.46
+• Debt Repayment   $  132.93
+• Living Expenses  $  398.78
+----------------------------------------
+✔ week 3 complete: validation + data-driven output.
+
+📅 Entry Date: 2025-08-26 16:47:31
+Income: $723.09
+• Tithe            $   72.31
+• Savings          $   72.31
+• Debt Repayment   $  144.62
+• Living Expenses  $  433.85
+----------------------------------------
+[ERROR] Invalid input: No positive number entered. 
+
+📅 Entry Date: 2025-08-26 16:48:38
+Income: $723.09
+• Tithe            $   72.31
+• Savings          $   72.31
+• Debt Repayment   $  144.62
+• Living Expenses  $  433.85
+----------------------------------------
+✔ week 3 complete: validation + data-driven output.
+✔ Week 4 Phase 2 Complete: Menu + Review Path Integrated.
+
+[BOOT] App started OK
+
+📅 Entry Date: 2025-09-03 18:24:41
+Income: $2063.75
+• Tithe            $  206.38
+• Savings          $  206.38
+• Debt Repayment   $  412.75
+• Living Expenses  $ 1238.25
+________________________________________
+[BOOT] App started OK
+
+📅 Entry Date: 2025-09-03 19:38:12
+Income: $2063.75
+• Tithe            $  206.38
+• Savings          $  206.38
+• Debt Repayment   $  412.75
+• Living Expenses  $ 1238.25
+________________________________________
+[ERROR] Invalid input: No positve number entered.
+[ERROR] Invalid input: Non-numeric characters entered.
+
+📅 Entry Date: 2025-09-03 19:53:12
+Income: $2063.75
+• Tithe            $  206.38
+• Savings          $  206.38
+• Debt Repayment   $  412.75
+• Living Expenses  $ 1238.25
+________________________________________
