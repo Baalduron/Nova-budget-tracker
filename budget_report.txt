@@ -174,7 +174,7 @@ Income: $723.09
 ✔ week 3 complete: validation + data-driven output.
 ✔ Week 4 Phase 2 Complete: Menu + Review Path Integrated.
 
-[BOOT] App started OK
+
 
 📅 Entry Date: 2025-09-03 18:24:41
 Income: $2063.75
@@ -183,7 +183,7 @@ Income: $2063.75
 • Debt Repayment   $  412.75
 • Living Expenses  $ 1238.25
 ________________________________________
-[BOOT] App started OK
+
 
 📅 Entry Date: 2025-09-03 19:38:12
 Income: $2063.75
@@ -196,6 +196,14 @@ ________________________________________
 [ERROR] Invalid input: Non-numeric characters entered.
 
 📅 Entry Date: 2025-09-03 19:53:12
+Income: $2063.75
+• Tithe            $  206.38
+• Savings          $  206.38
+• Debt Repayment   $  412.75
+• Living Expenses  $ 1238.25
+________________________________________
+
+📅 Entry Date: 2025-09-03 19:59:15
 Income: $2063.75
 • Tithe            $  206.38
 • Savings          $  206.38
